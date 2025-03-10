@@ -3,13 +3,13 @@ public class Main {
     private double modelBalance;
 
     // constructor method
-    Main(final String name, double balance) {
+    Main(final String name, final double balance) {
         this.modelName = name;
         this.modelBalance = balance;
     }
 
     // check balance value
-    void balance() {
+    void getBalance() {
         System.out.println("Hello, " + modelName + "!" + " You have a balance of: " + modelBalance);
     }
 
@@ -34,6 +34,9 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        Main account = new Main("Account", 500);
+        account.modelBalance = 2000;
+        account.getBalance();
     }
 }
 
