@@ -1,22 +1,22 @@
 public class Main {
-    String modelName;
-    double modelBalance;
+    private String modelName;
+    private double modelBalance;
 
     // constructor method
-    Main(String name, double balance) {
-        modelName = name;
-        modelBalance = balance;
+    Main(final String name, double balance) {
+        this.modelName = name;
+        this.modelBalance = balance;
     }
 
     // check balance value
-    void balance(Main account) {
-        System.out.println("Hello, " + account.modelName + "!" + " You have a balance of: " + account.modelBalance);
+    void balance() {
+        System.out.println("Hello, " + modelName + "!" + " You have a balance of: " + modelBalance);
     }
 
     // transfer value from other account
-    void transfer(Main account, Main accountTransfer, double balance) {
-        if(account.modelBalance >= balance) {
-            debit(account, balance);
+    void transfer(Main accountTransfer, double balance) {
+        if(modelBalance >= balance) {
+            debit(balance);
             deposit(accountTransfer, balance);
         }else{
             System.out.println("Insufficient balance");
@@ -24,8 +24,8 @@ public class Main {
     }
 
     // debits the account value
-    void debit(Main account, double balance) {
-        account.modelBalance -= balance;
+    void debit(double balance) {
+        modelBalance -= balance;
     }
 
     // deposits the account value
@@ -34,6 +34,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-
     }
 }
+
